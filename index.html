@@ -5,6 +5,276 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Witness Greatness - LeBron James</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  background-color: white;
+  color: black;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+
+
+body.loaded {
+  opacity: 1;
+}
+
+
+/* Add padding so content isn't hidden under fixed navbar */
+body {
+  padding-top: 70px;
+}
+
+/* Background Video */
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+#bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 100px 20px;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding: 50px 10%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+  padding: 50px 0;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.timeline h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* Timeline Items */
+
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 70%;
+  gap 20px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  width:100%;
+}
+
+.timeline-item:hover {
+  transform: scale(1.05);
+}
+
+.timeline-item .year {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #f5b700; /* highlight */
+}
+
+.timeline-item img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.content {
+  color: white;
+  max-width: 50%;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 2rem;
+  color: #ffd700;
+}
+
+.content p {
+  font-size: 1.2rem; 
+  line-height: 1.5;
+}
+
+/* Parallax Scrolling */
+.parallax {
+  background-image: url("images/lebron-banner.jpg");
+  height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Shoe Carousel Section */
+.shoe-carousel {
+  text-align: center;
+  padding: 50px 0;
+  background: black;
+  color: white;
+}
+
+.shoe-carousel h2 {
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* Carousel Container */
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* Carousel Scrolling Effect */
+.carousel {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  animation: scroll 15s linear infinite;
+}
+
+/* Shoe Images */
+.carousel img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.lebron-img {
+  width: 300px;
+  display: block;
+  margin: auto;
+  display: center;
+}
+
+.shoe-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 200px;
+}
+
+.shoe-item img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
+
+.shoe-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-align: center;
+  word-spacing: normal;
+  line-height: 4;
+  
+}
+/* Hover Effect */
+.carousel img:hover {
+  transform: scale(1.1);
+}
+
+/* Improve Carousel Text Spacing */
+.carousel-item {
+  position: relative;
+  text-align: center;
+}
+
+.carousel-text {
+  position: absolute;
+  bottom: 10%; /* Adjust to move text up/down */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6); /* Adds contrast for better readability */
+  color: white;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* Keyframes for Auto Scrolling */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: black;
+  color: white;
+  position: relative;
+}
+
+    </style>
   </head>
   <body>
 
@@ -177,6 +447,82 @@
     <footer>
       <p>Witness Greatness | Built for LeBron Fans</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="script.js">
+      // Smooth Scroll for the Timeline
+const timelineItems = document.querySelectorAll(".timeline-item");
+
+const fadeInOnScroll = () => {
+  timelineItems.forEach((item) => {
+    const rect = item.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.8) {
+      item.style.opacity = "1";
+      item.style.transform = "translateY(0)";
+    }
+  });
+};
+
+window.addEventListener("scroll", fadeInOnScroll);
+
+// Initialize hidden state
+timelineItems.forEach((item) => {
+  item.style.opacity = "0";
+  item.style.transform = "translateY(50px)";
+  item.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
+});
+
+const carousel = document.querySelector(".carousel");
+
+// Pause animation on hover
+carousel.addEventListener("mouseenter", () => {
+  carousel.style.animationPlayState = "paused";
+});
+
+// Resume animation when mouse leaves
+carousel.addEventListener("mouseleave", () => {
+  carousel.style.animationPlayState = "running";
+});
+
+// Smooth Page Load Effect
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("loaded");
+});
+
+const toggleButton = document.getElementById("theme-toggle");
+const body = document.body;
+
+// Check if user has a saved preference
+if (localStorage.getItem("theme") === "dark") {
+  body.classList.add("dark-mode");
+  toggleButton.checked = true;
+}
+
+// Toggle Dark Mode
+toggleButton.addEventListener("change", () => {
+  body.classList.toggle("dark-mode");
+
+  // Save preference
+  if (body.classList.contains("dark-mode")) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
+});
+
+const stats = {
+  points: 39867,
+  mvps: 4,
+  allstars: 19,
+};
+
+function updateStats() {
+  document.getElementById("points").textContent = stats.points;
+  document.getElementById("mvps").textContent = stats.mvps;
+  document.getElementById("allstars").textContent = stats.allstars;
+}
+
+// Update stats on page load
+updateStats();
+
+    </script>
   </body>
 </html>
